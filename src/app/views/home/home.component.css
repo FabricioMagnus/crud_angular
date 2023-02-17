@@ -1,0 +1,17 @@
+.title{
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.subtitle{
+    font-size: 1.1rem;
+
+}
+
+.home{
+ padding: 16px;
+box-shadow: 5px 5px 4px #999;
+border: 1px solid rgb(216, 215, 215);
+border-radius: 10px;
+}
