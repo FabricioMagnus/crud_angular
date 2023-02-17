@@ -10,7 +10,7 @@ import {
   selector: '[myFor]',
 })
 export class ForDirective implements OnInit {
-  @Input('myForEm')
+  @Input('myForIn')
   numbers: number[] = [];
   @Input('myForUsando')
   texto!: string;
