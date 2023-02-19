@@ -2,6 +2,7 @@ import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderService } from '../../template/header/header.service';
 
 @Component({
   selector: 'app-product-update',
@@ -16,8 +17,15 @@ export class ProductUpdateComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private router: Router,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private headerService: HeaderService
+  ) {
+    headerService.headerData = {
+      title: 'Atualizar Cadastro de Produto',
+      icon: 'edit',
+      routerUrl: '/products',
+    };
+  }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id') || '';
