@@ -9,7 +9,7 @@ import { Product } from '../product.model';
 })
 export class ProductReadComponent implements OnInit {
   productList: Product[] = [];
-  displayedColumns = ['id', 'name', 'price'];
+  displayedColumns = ['id', 'name', 'price', 'action'];
 
   constructor(private productService: ProductService) {}
 
@@ -17,6 +17,15 @@ export class ProductReadComponent implements OnInit {
     this.productService.read().subscribe((products) => {
       this.productList = products;
       console.log('lista de produtos', this.productList);
+    });
+  }
+
+  deleteProduct(id: string): void {
+    this.productService.delete(id).subscribe((product) => {
+      this.productService.showMessage('Produto deletado com sucesso');
+      this.productService.read().subscribe((products) => {
+        this.productList = products;
+      });
     });
   }
 }

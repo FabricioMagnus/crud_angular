@@ -2,3 +2,12 @@ table{
     width: 100%;
     
 }
+i.edit {
+    color: #00b250;
+    margin-right: 6px;
+    
+}
+
+i.delete{
+    color: #e35e6b
+}
